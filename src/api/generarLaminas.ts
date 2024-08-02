@@ -3,7 +3,7 @@ import { fetchData } from "./fetchData";
 import { generateConfiguration } from "./generateConfiguration";
 
 export const generarLaminas = async() => {
-    const { films, characters, starships } = await fetchData();
+    const { peliculas, personajes, naves } = await fetchData();
     const configuration = generateConfiguration();
     const laminasMock: ILaminasMock = {
         peliculas: [],
