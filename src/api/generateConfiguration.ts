@@ -1,0 +1,1 @@
+export const generateConfiguration = () => (Math.random() > 0.5);
