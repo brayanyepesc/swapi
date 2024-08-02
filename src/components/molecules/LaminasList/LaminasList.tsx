@@ -6,9 +6,9 @@ export const LaminasList = ({ laminasGeneradas, hasLaminas }: { laminasGeneradas
         <>
             <ul className="h-full w-full grid grid-cols-2 gap-2">
                 {
-                    hasLaminas ? laminasGeneradas.map((_, index) => (
+                    hasLaminas ? laminasGeneradas.map((lamina, index) => (
                         <li key={index}>
-                            <LaminasListItem />
+                            <LaminasListItem lamina={lamina}/>
                         </li>
                     )) : <li className="text-blue-500 text-sm text-center">Aún no hay láminas generadas</li>
                 }
