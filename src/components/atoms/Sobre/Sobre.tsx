@@ -3,8 +3,9 @@ import useStore from "../../../store/store"
 import { SobreProps } from "./types"
 
 export const Sobre = ({ name }: SobreProps) => {
-    const { aggLaminas, counter } = useStore();
+    const { aggLaminas, counter, startCounter } = useStore();
     const openSobre = async() => {
+        startCounter();
         const laminasGeneradas = await generarLaminas();
         aggLaminas(laminasGeneradas);
     }
