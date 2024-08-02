@@ -18,4 +18,5 @@ export const generarLaminas = async() => {
         laminasMock.personajes = Array(3).fill(null).map(() => personajes[Math.floor(Math.random() * personajes.length)]);
         laminasMock.naves = Array(2).fill(null).map(() => naves[Math.floor(Math.random() * naves.length)]);
     }
+    return laminasMock;
 }
