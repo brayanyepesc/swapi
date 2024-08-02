@@ -41,7 +41,10 @@ const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
         aggLaminaAlAlbum: (lamina: IMovie | ICharacter | IStarship) => {
             const { category } = useInfoLamina({ lamina });
             const { album } = get();
+
             if (category === 'films' && 'title' in lamina) {
+                const exist = album.peliculas.find(pelicula => pelicula.title === lamina.title);
+                if (exist) return;
                 set({
                     album: {
                         ...album,
@@ -49,13 +52,17 @@ const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
                     },
                 });
             } else if (category === 'people' && 'name' in lamina) {
+                const exist = album.personajes.find(personaje => personaje.name === lamina.name);
+                if (exist) return;
                 set({
                     album: {
                         ...album,
                         personajes: [...album.personajes, lamina as ICharacter],
                     },
                 });
-            } else if (category === 'starships' && 'starship_class' in lamina) {
+            } else if (category === 'starships' && 'name' in lamina) {
+                const exist = album.naves.find(nave => nave.name === lamina.name);
+                if (exist) return;
                 set({
                     album: {
                         ...album,
