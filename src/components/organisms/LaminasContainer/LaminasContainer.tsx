@@ -2,13 +2,16 @@ import useStore from "../../../store/store";
 import { LaminasList } from "../../molecules"
 
 export const LaminasContainer = () => {
-    const { laminas } = useStore();
+    const { laminas, resetLaminas } = useStore();
     const laminasGeneradas = [
         ...(laminas.peliculas ?? []),
         ...(laminas.personajes ?? []),
         ...(laminas.naves ?? [])
     ];
     const hasLaminas: boolean = laminasGeneradas.length > 0;
+    const deleteLaminas = () => { 
+        resetLaminas();
+    }
     return (
         <div className="flex flex-col justify-center items-center p-5 bg-gray-100">
             <div className="flex flex-col justify-center items-center my-4">
@@ -17,7 +20,7 @@ export const LaminasContainer = () => {
             </div>
             <LaminasList laminasGeneradas={laminasGeneradas} hasLaminas={hasLaminas}/>
             {
-                hasLaminas && (<button className="bg-blue-500 hover:bg-blue-700 text-white rounded p-1 flex self-end">Borrar láminas</button>)
+                hasLaminas && (<button onClick={deleteLaminas} className="bg-blue-500 w-full mt-2 text-center hover:bg-blue-700 text-white rounded p-2">Borrar láminas</button>)
             }
         </div>
     )
