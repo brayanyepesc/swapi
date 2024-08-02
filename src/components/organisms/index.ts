@@ -1,3 +1,5 @@
 export * from "./AlbumHeader/AlbumHeader"
 export * from "./SobresContainer/SobresContainer"
 export * from "./LaminasContainer/LaminasContainer"
+export * from "./PeliculasContainer/PelículasContainer"
+export * from "./PersonajesContainer/PersonajesContainer"
