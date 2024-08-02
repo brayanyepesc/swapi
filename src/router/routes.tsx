@@ -1,10 +1,15 @@
 import { createBrowserRouter, RouteObject } from "react-router-dom";
 import Inicio from "../pages/Inicio";
+import Album from "../pages/Album";
 
 const routes: RouteObject[] = [
     {
         path: "/",
         element: <Inicio />
+    },
+    {
+        path: "/album",
+        element: <Album />
     }
 ]
 
