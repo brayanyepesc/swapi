@@ -31,6 +31,12 @@ const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
             }, 1000);
             set({ intervalId: newIntervalId });
         },
+        aggLaminas: (newLaminas) => {
+            set({ laminas: newLaminas });
+        },
+        resetLaminas: () => {
+            set({ laminas: { peliculas: [], personajes: [], naves: [] } });
+        },
     }),
     {
         name: 'album',

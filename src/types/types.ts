@@ -69,6 +69,8 @@ export interface IStore {
     }
     intervalId: number | null;
     startCounter: () => void;
+    aggLaminas: (laminas: ILaminasMock) => void;
+    resetLaminas: () => void;
 }
 
 export interface ISobre {
