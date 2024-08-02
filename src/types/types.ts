@@ -62,6 +62,11 @@ export interface IStore {
         naves: IStarship[];
     };
     counter: number;
+    sobre: {
+        peliculas?: IMovie[];
+        personajes: ICharacter[];
+        naves: IStarship[];
+    }
 }
 
 export interface ISobre {

@@ -10,6 +10,11 @@ const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
             naves: [],
         },
         counter: 0,
+        sobre: {
+            peliculas: [],
+            personajes: [],
+            naves: [],
+        }
     }),
     {
         name: 'album',
