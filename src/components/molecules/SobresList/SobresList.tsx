@@ -7,7 +7,9 @@ export const SobresList = () => {
         <ul className="h-full w-full grid grid-cols-2 gap-2">
             {
                 sobresDisponiblesMock.map(({ id, name }: ISobre) => (
-                    <Sobre id={id} name={name} />
+                    <li key={id}>
+                        <Sobre name={name} />
+                    </li>
                 ))
             }
         </ul>
