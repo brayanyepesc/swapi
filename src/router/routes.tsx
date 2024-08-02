@@ -8,7 +8,7 @@ const routes: RouteObject[] = [
         element: <Inicio />
     },
     {
-        path: "/album",
+        path: "/mi-album",
         element: <Album />
     }
 ]
