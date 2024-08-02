@@ -73,3 +73,9 @@ export interface ISobre {
     id: number;
     name: string;
 }
+
+export interface ILaminasMock {
+    peliculas: IMovie[];
+    personajes: ICharacter[];
+    naves: IStarship[];
+}
