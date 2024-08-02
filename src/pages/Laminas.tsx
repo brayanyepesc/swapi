@@ -1,7 +1,5 @@
-import { Sobre } from "../components/atoms";
 import { Header } from "../components/molecules";
-import { ISobre } from "../types/types";
-import { sobresDisponiblesMock } from "../utils/constantes";
+import { SobreList } from "../components/molecules/SobreList/SobreList";
 
 export default function Laminas() {
     return (
@@ -16,13 +14,7 @@ export default function Laminas() {
                         <h2 className="text-gray-800 text-xl font-bold">Sobres disponibles</h2>
                         <p className="my-2 text-sm">Selecciona un sobre para generar las láminas</p>
                     </div>
-                    <ul className="h-full w-full grid grid-cols-2 gap-2">
-                        {
-                            sobresDisponiblesMock.map(({ id, name }: ISobre) => (
-                                <Sobre id={id} name={name} />
-                            ))
-                        }
-                    </ul>
+                    <SobreList />
                 </div>
                 <div className="flex justify-center items-center">Hasta el momento no tienes láminas generadas</div>
             </div>
