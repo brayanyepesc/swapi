@@ -63,3 +63,8 @@ export interface IStore {
     };
     counter: number;
 }
+
+export interface ISobre {
+    id: number;
+    name: string;
+}
