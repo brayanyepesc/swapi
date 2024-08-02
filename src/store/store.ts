@@ -18,8 +18,6 @@ const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
         },
         intervalId: null as number | null,
         startCounter: () => {
-            const { intervalId } = get();
-            if (intervalId) return;
             const newIntervalId = window.setInterval(() => {
                 set(state => {
                     const newCounter = state.counter - 1;
@@ -75,6 +73,11 @@ const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
     {
         name: 'album',
         getStorage: () => localStorage,
+        onRehydrateStorage: () => (state) => {
+            if (state?.intervalId) {
+                state.startCounter();
+            }
+        },
     }
 ));
 
