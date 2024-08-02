@@ -1,3 +1,4 @@
+import { Counter } from "../../atoms"
 import { SobresList } from "../../molecules"
 
 export const SobresContainer = () => {
@@ -8,6 +9,7 @@ export const SobresContainer = () => {
                 <p className="my-2 text-sm">Selecciona un sobre para generar las láminas</p>
             </div>
             <SobresList />
+            <Counter />
         </div>
     )
 }
