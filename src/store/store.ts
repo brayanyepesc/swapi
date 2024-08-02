@@ -5,9 +5,9 @@ import { IStore } from '../types/types';
 const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
     (set) => ({
         album: {
-            movies: [],
-            characters: [],
-            starships: [],
+            peliculas: [],
+            personajes: [],
+            naves: [],
         },
         counter: 0,
     }),

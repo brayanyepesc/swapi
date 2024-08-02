@@ -57,9 +57,9 @@ export interface IStarship {
 
 export interface IStore {
     album: {
-        movies: IMovie[];
-        characters: ICharacter[];
-        starships: IStarship[];
+        peliculas: IMovie[];
+        personajes: ICharacter[];
+        naves: IStarship[];
     };
     counter: number;
 }
