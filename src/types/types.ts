@@ -67,6 +67,8 @@ export interface IStore {
         personajes: ICharacter[];
         naves: IStarship[];
     }
+    intervalId: number | null;
+    startCounter: () => void;
 }
 
 export interface ISobre {

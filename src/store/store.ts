@@ -3,18 +3,34 @@ import { persist } from 'zustand/middleware';
 import { IStore } from '../types/types';
 
 const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
-    (set) => ({
+    (set, get) => ({
         album: {
             peliculas: [],
             personajes: [],
             naves: [],
         },
-        counter: 0,
+        counter: 60,
         laminas: {
             peliculas: [],
             personajes: [],
             naves: [],
-        }
+        },
+        intervalId: null,
+        startCounter: () => {
+            const { intervalId } = get();
+            if (intervalId) return;
+            const newIntervalId = window.setInterval(() => {
+                set(state => {
+                    const newCounter = state.counter - 1;
+                    if (newCounter <= 0) {
+                        clearInterval(newIntervalId);
+                        return { counter: 60, intervalId: null };
+                    }
+                    return { counter: newCounter };
+                });
+            }, 1000);
+            set({ intervalId: newIntervalId });
+        },
     }),
     {
         name: 'album',
