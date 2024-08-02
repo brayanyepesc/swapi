@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouteObject } from "react-router-dom";
 import Inicio from "../pages/Inicio";
 import Album from "../pages/Album";
+import Laminas from "../pages/Laminas";
 
 const routes: RouteObject[] = [
     {
@@ -10,6 +11,10 @@ const routes: RouteObject[] = [
     {
         path: "/mi-album",
         element: <Album />
+    },
+    {
+        path: "/obtener-laminas",
+        element: <Laminas />
     }
 ]
 
