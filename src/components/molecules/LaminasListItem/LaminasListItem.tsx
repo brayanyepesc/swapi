@@ -1,3 +1,4 @@
+import { LuEye, LuStar } from "react-icons/lu";
 import useStore from "../../../store/store";
 import { useInfoLamina } from "../../../utils/extractInfoOfLamina"
 import { isSpecial } from "../../../utils/isSpecial";
@@ -15,7 +16,7 @@ export const LaminasListItem = ({ lamina }: LaminasListItemProps) => {
       {
         special && (
           <div className="rounded-full absolute top-4 left-1/2 transform -translate-x-1/2 -translate-y-full bg-red-500 text-white p-1">
-          Star
+          <LuStar />
         </div>
         )
       }
@@ -28,7 +29,7 @@ export const LaminasListItem = ({ lamina }: LaminasListItemProps) => {
         ))
       }
       <div className="w-full flex gap-2">
-        <button className="w-full p-1 bg-gray-500 hover:bg-gray-700 rounded">Ver</button>
+        <button className="w-full p-1 bg-gray-500 hover:bg-gray-700 rounded flex justify-center items-center"><LuEye className="mr-2"/>Ver</button>
         <button onClick={handleAddLamina} className="w-full p-1 bg-blue-500 hover:bg-blue-700 rounded">Agregar</button>
       </div>
     </div>

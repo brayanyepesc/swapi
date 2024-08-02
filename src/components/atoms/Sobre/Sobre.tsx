@@ -1,8 +1,8 @@
+import { LuMailOpen } from "react-icons/lu";
 import { generarLaminas } from "../../../api/generarLaminas";
 import useStore from "../../../store/store"
-import { SobreProps } from "./types"
 
-export const Sobre = ({ name }: SobreProps) => {
+export const Sobre = () => {
     const { aggLaminas, counter, startCounter, laminas } = useStore();
     const peliculas = laminas.peliculas || [];
     const personajes = laminas.personajes || [];
@@ -18,8 +18,8 @@ export const Sobre = ({ name }: SobreProps) => {
     }
     const isBlockButton = counter < 60 || hasItems;
     return (
-        <button disabled={isBlockButton} onClick={openSobre} className={`${isBlockButton ? 'bg-gray-500' : 'bg-gray-800 hover:bg-gray-900'} w-full h-full p-4 text-center transition-all cursor-pointer text-white rounded`}>
-            {name}
+        <button disabled={isBlockButton} onClick={openSobre} className={`${isBlockButton ? 'bg-gray-500' : 'bg-gray-800 hover:bg-gray-900'} w-full h-full p-4 text-center transition-all cursor-pointer text-white rounded flex justify-center items-center`}>
+           <LuMailOpen className="mr-2 text-blue-500"/> Abrir
         </button>
     )
 }
