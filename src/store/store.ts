@@ -10,7 +10,7 @@ const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
             naves: [],
         },
         counter: 0,
-        sobre: {
+        laminas: {
             peliculas: [],
             personajes: [],
             naves: [],
