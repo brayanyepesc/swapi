@@ -62,7 +62,7 @@ export interface IStore {
         naves: IStarship[];
     };
     counter: number;
-    sobre: {
+    laminas: {
         peliculas?: IMovie[];
         personajes: ICharacter[];
         naves: IStarship[];
