@@ -1,8 +1,13 @@
+import useStore from "../../../store/store";
 import { useInfoLamina } from "../../../utils/extractInfoOfLamina"
 import { LaminasListItemProps } from "./types"
 
 export const LaminasListItem = ({ lamina }: LaminasListItemProps) => {
+  const { aggLaminaAlAlbum } = useStore();
   const infoLamina = useInfoLamina({ lamina });
+  const handleAddLamina = () => {
+    aggLaminaAlAlbum(lamina);
+  }
   return (
     <div className="w-full space-y-1 h-full text-center border p-2 transition-all text-white rounded">
       {
@@ -15,7 +20,7 @@ export const LaminasListItem = ({ lamina }: LaminasListItemProps) => {
       }
       <div className="w-full flex gap-2">
         <button className="w-full p-1 bg-gray-500 hover:bg-gray-700 rounded">Ver</button>
-        <button className="w-full p-1 bg-blue-500 hover:bg-blue-700 rounded">Agregar</button>
+        <button onClick={handleAddLamina} className="w-full p-1 bg-blue-500 hover:bg-blue-700 rounded">Agregar</button>
       </div>
     </div>
   )

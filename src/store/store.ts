@@ -1,21 +1,22 @@
 import create from 'zustand';
 import { persist } from 'zustand/middleware';
-import { IStore } from '../types/types';
+import { ICharacter, IMovie, IStarship, IStore } from '../types/types';
+import { useInfoLamina } from '../utils/extractInfoOfLamina';
 
 const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
     (set, get) => ({
         album: {
-            peliculas: [],
-            personajes: [],
-            naves: [],
+            peliculas: [] as IMovie[],
+            personajes: [] as ICharacter[],
+            naves: [] as IStarship[],
         },
         counter: 60,
         laminas: {
-            peliculas: [],
-            personajes: [],
-            naves: [],
+            peliculas: [] as IMovie[],
+            personajes: [] as ICharacter[],
+            naves: [] as IStarship[],
         },
-        intervalId: null,
+        intervalId: null as number | null,
         startCounter: () => {
             const { intervalId } = get();
             if (intervalId) return;
@@ -37,6 +38,32 @@ const useStore = create<IStore, [["zustand/persist", IStore]]>(persist(
         resetLaminas: () => {
             set({ laminas: { peliculas: [], personajes: [], naves: [] } });
         },
+        aggLaminaAlAlbum: (lamina: IMovie | ICharacter | IStarship) => {
+            const { category } = useInfoLamina({ lamina });
+            const { album } = get();
+            if (category === 'films' && 'title' in lamina) {
+                set({
+                    album: {
+                        ...album,
+                        peliculas: [...album.peliculas, lamina as IMovie],
+                    },
+                });
+            } else if (category === 'people' && 'name' in lamina) {
+                set({
+                    album: {
+                        ...album,
+                        personajes: [...album.personajes, lamina as ICharacter],
+                    },
+                });
+            } else if (category === 'starships' && 'starship_class' in lamina) {
+                set({
+                    album: {
+                        ...album,
+                        naves: [...album.naves, lamina as IStarship],
+                    },
+                });
+            }
+        }
     }),
     {
         name: 'album',

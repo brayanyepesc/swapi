@@ -71,6 +71,7 @@ export interface IStore {
     startCounter: () => void;
     aggLaminas: (laminas: ILaminasMock) => void;
     resetLaminas: () => void;
+    aggLaminaAlAlbum: (lamina: IMovie | ICharacter | IStarship) => void;
 }
 
 export interface ISobre {
