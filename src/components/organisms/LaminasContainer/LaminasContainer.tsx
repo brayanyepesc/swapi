@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import useStore from "../../../store/store";
 import { LaminasList } from "../../molecules"
 
@@ -11,6 +12,11 @@ export const LaminasContainer = () => {
     const hasLaminas: boolean = laminasGeneradas.length > 0;
     const deleteLaminas = () => { 
         resetLaminas();
+        Swal.fire({
+          icon: "success",
+          title: "Genial",
+          text: "Haz eliminado correctamente las láminas, ahora puedes abrir otro sobre!",
+        });
     }
     return (
         <div className="flex flex-col justify-center items-center p-5 bg-gray-100">

@@ -16,7 +16,7 @@ export const Sobre = () => {
         const laminasGeneradas = await generarLaminas();
         aggLaminas(laminasGeneradas);
     }
-    const isBlockButton = counter < 60 || hasItems;
+    const isBlockButton = counter <= 60 || hasItems;
     return (
         <button disabled={isBlockButton} onClick={openSobre} className={`${isBlockButton ? 'bg-gray-500' : 'bg-gray-800 hover:bg-gray-900'} w-full h-full p-4 text-center transition-all cursor-pointer text-white rounded flex justify-center items-center`}>
            <LuMailOpen className="mr-2 text-blue-500"/> Abrir
