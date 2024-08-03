@@ -9,7 +9,7 @@ export const NavesContainer = () => {
   return (
     <div>
         <AlbumHeader imgUrl={StarshipsImage} sectionTitle="Naves"/>
-        <ul className="mt-20 grid grid-cols-3 gap-4">
+        <ul className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-4">
             {
                 hasItems ? naves.map((nave, index) => (
                     <li key={index}>

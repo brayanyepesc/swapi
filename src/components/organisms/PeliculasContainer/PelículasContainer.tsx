@@ -9,7 +9,7 @@ export const PelículasContainer = () => {
   return (
     <div>
         <AlbumHeader imgUrl={PopcornImage} sectionTitle="Películas"/>
-        <ul className="mt-20 grid grid-cols-3 gap-4">
+        <ul className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-4">
             {
                 hasItems ? peliculas.map((pelicula, index) => (
                     <li key={index}>
