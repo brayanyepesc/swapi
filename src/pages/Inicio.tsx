@@ -10,9 +10,9 @@ export default function Inicio (){
                 <h1 className="text-4xl font-bold text-center text-blue-500">Star Wars - Brayan</h1>
                 <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum labore sed, aliquam deleniti odit autem possimus itaque quos et temporibus, dolorem sint est explicabo aut dicta maxime ipsam minus veritatis?</p>
                 <div className="w-full flex justify-center items-center gap-4 px-20">
-                    <a className="p-2 rounded bg-blue-500 text-white hover:bg-blue-700 w-full text-center" href="">Web</a>
-                    <a className="p-2 rounded bg-blue-500 text-white hover:bg-blue-700 w-full text-center" href="">Github</a>
-                    <a className="p-2 rounded bg-blue-500 text-white hover:bg-blue-700 w-full text-center" href="">LinkedIn</a>
+                    <a className="p-2 rounded bg-blue-500 text-white hover:bg-blue-700 w-full text-center" target="_blank" href="https://brayanyepes.com">Web</a>
+                    <a className="p-2 rounded bg-blue-500 text-white hover:bg-blue-700 w-full text-center" target="_blank" href="https://github.com/brayanyepesc">Github</a>
+                    <a className="p-2 rounded bg-blue-500 text-white hover:bg-blue-700 w-full text-center" target="_blank" href="https://www.linkedin.com/in/brayan-yepesc/">LinkedIn</a>
                 </div>
             </div>
         </main>
