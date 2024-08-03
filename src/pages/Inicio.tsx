@@ -4,7 +4,7 @@ export default function Inicio (){
     return (
         <main className="w-full h-screen grid grid-cols-1 md:grid-cols-2">
             <div className="w-full">
-                <img src={StarwarsImage} alt="" className="w-full h-full object-cover"/>
+                <img src={StarwarsImage} alt="Imagen de referencia a el universo de starwars" className="w-full h-full object-cover"/>
             </div>
             <div className="flex flex-col justify-center items-center space-y-4">
                 <h1 className="text-4xl font-bold text-center text-blue-500">Star Wars - Brayan</h1>
