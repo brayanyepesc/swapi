@@ -1,6 +1,7 @@
 import { LuMailOpen } from "react-icons/lu";
 import { generarLaminas } from "../../../api/generarLaminas";
 import useStore from "../../../store/store"
+import Swal from "sweetalert2";
 
 export const Sobre = () => {
     const { aggLaminas, counter, startCounter, laminas } = useStore();
@@ -12,6 +13,12 @@ export const Sobre = () => {
         (personajes?.length > 0) ||
         (naves.length > 0);
     const openSobre = async () => {
+        Swal.fire({
+            title: '¡Sobre abierto!',
+            text: 'Se han generado nuevas láminas, recuerda que para poder abrir nuevos sobres debes esperar 60 segundos y eliminar las láminas que ya tienes del carrito.',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        })
         startCounter();
         const laminasGeneradas = await generarLaminas();
         aggLaminas(laminasGeneradas);
