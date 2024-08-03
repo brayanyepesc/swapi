@@ -4,7 +4,7 @@ export const LaminasList = ({ laminasGeneradas, hasLaminas }: { laminasGeneradas
     
     return (
         <>
-            <ul className="h-full w-full grid grid-cols-2 gap-2">
+            <ul className="h-full w-full grid grid-cols-1 md:grid-cols-2 gap-2">
                 {
                     hasLaminas ? laminasGeneradas.map((lamina, index) => (
                         <li key={index}>
